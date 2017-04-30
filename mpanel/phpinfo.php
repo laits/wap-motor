@@ -21,13 +21,19 @@ echo '<img src="../images/img/site.png" alt="image" /> <b>PHP-info</b><br /><br 
 echo 'PHP version: <b>'.phpversion().'</b><br />';
 
 if(zend_version()){echo 'Zend version: <b>'.zend_version().'</b><br />';}
+echo '<br /><table width="99%" border="0" cellspacing="0" cellpadding="2">';
 
+if(function_exists('imagetypes')){
 if(gd_info()){$gd_info = preg_replace('/[^0-9\.]/', '', gd_info());
-echo 'GD Version: <b>'.$gd_info['GD Version'].'</b><br />';}
+  echo '<tr bgcolor="#E0E0E0"><td width="40%">GD Version: </td><td width="60%">'.$gd_info['GD Version'].'</td></tr>';}
+ }
+  else
+ {
+  echo '<tr bgcolor="pink"><td width="40%">GD</td><td width="60%">Not installed!</td></tr>';
+ }
 
 $ini = ini_get_all();
 
-echo '<br /><table width="99%" border="0" cellspacing="0" cellpadding="2">';
 echo '<tr bgcolor="ffff00"><td width="40%">Directive</td><td width="60%">Local Value</td></tr>';
 
 $q = 0;
