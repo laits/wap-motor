@@ -25,7 +25,7 @@ echo '<br /><table width="99%" border="0" cellspacing="0" cellpadding="2">';
 
 if(function_exists('imagetypes')){
 if(gd_info()){$gd_info = preg_replace('/[^0-9\.]/', '', gd_info());
-  echo '<tr bgcolor="#e0e0e0"><td width="40%">GD Version: </td><td width="60%">'.$gd_info['GD Version'].'</td></tr>';}
+  echo '<tr bgcolor="#E0E0E0"><td width="40%">GD Version: </td><td width="60%">'.$gd_info['GD Version'].'</td></tr>';}
  }
   else
  {
@@ -34,7 +34,7 @@ if(gd_info()){$gd_info = preg_replace('/[^0-9\.]/', '', gd_info());
 
 $ini = ini_get_all();
 
-echo '<tr bgcolor="#ffff00"><td width="40%">Directive</td><td width="60%">Local Value</td></tr>';
+echo '<tr bgcolor="ffff00"><td width="40%">Directive</td><td width="60%">Local Value</td></tr>';
 
 $q = 0;
 foreach($ini as $inikey=>$inivalue){ $q++;
